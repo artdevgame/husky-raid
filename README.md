@@ -93,3 +93,24 @@ The game uses:
 ## Credits
 
 Built with Godot Engine 4.x
+
+## Generated Assets
+
+The following assets have been generated with Meshy.ai:
+
+| Status | Asset |
+|--------|-------|
+| ✅ Done | player_red.glb |
+| ✅ Done | assault_rifle.glb |
+| ⏳ Pending | player_blue, pistol, shotgun, sniper, rocket_launcher, energy_sword, flag_red, flag_blue |
+
+### Generating More Assets
+
+Run the generator script to create more assets:
+
+```bash
+source .venv/bin/activate
+python3 generate_more.py
+```
+
+This will generate the remaining weapons and flags using Meshy.ai API.
