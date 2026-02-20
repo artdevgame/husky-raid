@@ -1,0 +1,10 @@
+# Godot-specific ignores
+.godot/
+        
+# If you ever export your game, ignore the builds
+build/
+bin/
+
+# System-specific ignores
+.DS_Store
+Thumbs.db

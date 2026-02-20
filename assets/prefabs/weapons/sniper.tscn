@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://sniper"]
+
+[ext_resource type="Script" path="res://scripts/weapons/sniper.gd" id="1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sniper"]
+size = Vector3(0.1, 0.15, 1.0)
+
+[node name="Sniper" type="Node3D"]
+script = ExtResource("1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_sniper")
