@@ -7,6 +7,9 @@ Usage: python3 generate_more.py
 import requests, time, os
 
 API_KEY = os.environ.get("MESHY_API_KEY")
+
+print(f"Using Meshy API Key: {API_KEY}")
+
 BASE_URL = "https://api.meshy.ai"
 
 ASSETS = [
@@ -67,9 +70,16 @@ def wait_task(tid):
 
 def gen(name, prompt, texture, folder):
     print(f"\n=== {name} ===")
+    
+    # Define headers once to reuse
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json"
+    }
+    
     r = requests.post(
         f"{BASE_URL}/openapi/v2/text-to-3d",
-        headers={"Content-Type": "application/json"},
+        headers=headers,
         json={
             "mode": "preview",
             "prompt": prompt,
@@ -84,7 +94,7 @@ def gen(name, prompt, texture, folder):
 
     r = requests.post(
         f"{BASE_URL}/openapi/v2/text-to-3d",
-        headers={"Content-Type": "application/json"},
+        headers=headers,
         json={
             "mode": "refine",
             "preview_task_id": pid,
